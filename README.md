@@ -1,30 +1,16 @@
-# Agent Christa: The Great Pizza Challenge — Vintage Build
+# Agent Christa: The Great Pizza Challenge — v5
 
-A standalone, mobile-first travel-deduction game.
+## v5 rules
+- Uses the illustrated traveling-pizza-agent Christa asset, not the original source photograph.
+- Neighborhoods are removed completely. Geography is city-level.
+- International write-ins require City + Country.
+- U.S. write-ins require City + State.
+- Kids Mode accepts close/phonetic location spelling as a solved deduction, then requires the player to copy the correctly spelled model before continuing.
+- Adult Mode requires correctly spelled write-in location answers (capitalization, spacing and diacritics are normalized).
+- Pizza identification is ALWAYS multiple choice.
+- Pizza choices scale by difficulty: 2 / 3 / 4 / 5 / 6.
+- Every correct pizza reveal includes a short history/culture fact tied to the pizza and destination.
+- Harder levels use subtler clues and stronger distractors rather than neighborhood trivia.
 
-## Publish on GitHub Pages
-Upload the **contents** of this folder to the root of your existing repository. `index.html` must remain at repository root. Commit the changes. GitHub Pages will rebuild automatically from `main` / `(root)`.
-
-## Important files
-- `index.html` — app shell
-- `styles.css` — vintage travel-game visual system
-- `data.js` — destination, neighborhood and pizza cases
-- `app.js` — game engine
-- `assets/agent-christa.jpg` — Christa image used throughout the app
-- `assets/design-reference.png` — visual reference used for the map texture
-
-## New in this build
-- Mobile-first vintage travel-game interface
-- Christa image integrated into title, sighting and arrival scenes
-- Quick Trip, World Tour and Epic Pizza Chase
-- Five difficulty levels
-- Open-ended city/country answers on harder levels
-- Neighborhood-level deductions for Special Agent and Director
-- Pursuit-state mechanic instead of a countdown clock
-- Assistance has a pursuit penalty
-- Parallel location and pizza evidence
-- Player avatar or uploaded photo
-- Printable / Save-as-PDF vintage passport
-- 12 destination cases
-
-No server or build tools are required.
+## GitHub Pages
+Upload the CONTENTS of this folder to the root of your existing Pizza-Challenge repository and replace the old files. Keep the assets folder as a folder.
