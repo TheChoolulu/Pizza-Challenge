@@ -21,3 +21,15 @@ Deploy all root files and the assets folder to GitHub Pages.
 - Recently used Christa lines are suppressed to reduce immediate repetition.
 - Arrival dialogue also reacts to the current pursuit state.
 - Canonical Christa artwork is versioned as `agent-christa-v8.png` to avoid stale browser image caching.
+
+
+## v9
+- Rebuilt gameplay around the supplied tactile investigation-board design reference.
+- Physical clue objects, translation interaction, evidence board selection, evidence-theory pursuit bonus.
+- New investigations: Ask a Local, Translate Clue, Check Map, Inspect Photo, Research Landmark, Check Menu, and Adult Taproom intel.
+- Dedicated deduction desk with Narrow the Region, Reveal Map Area, Show Possible Locations, and Another Pizza Clue. No neighborhoods.
+- Junior Agent location deduction remains fully multiple choice using complete City + State/Country answers.
+- Correct-location arrival is now an event with arrival stamp and live passport progress.
+- Pizza investigation now exposes selectable crust/topping/preparation observations before the multiple-choice identification.
+- Passport stamp progress is visible during the mission.
+- Stronger dossier/tactile styling throughout gameplay.
