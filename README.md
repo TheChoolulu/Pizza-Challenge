@@ -1,6 +1,6 @@
-# Agent Christa: The Great Pizza Challenge — v5
+# Agent Christa: The Great Pizza Challenge — v6
 
-## v5 rules
+## v6 rules
 - Uses the illustrated traveling-pizza-agent Christa asset, not the original source photograph.
 - Neighborhoods are removed completely. Geography is city-level.
 - International write-ins require City + Country.
@@ -14,3 +14,6 @@
 
 ## GitHub Pages
 Upload the CONTENTS of this folder to the root of your existing Pizza-Challenge repository and replace the old files. Keep the assets folder as a folder.
+
+- v6 fixes location multiple choice: every option now contains the complete answer. International choices display City, Country; U.S. choices display City, State. No second text field appears after selecting a multiple-choice location.
+- v6 replaces the character asset with the approved text-free Colosseum/Trevi Fountain traveling Agent Christa illustration.
