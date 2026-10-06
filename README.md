@@ -12,3 +12,12 @@ V7 expands replayability and presentation.
 - Higher levels retain open-ended location deductions and Kids spelling support
 
 Deploy all root files and the assets folder to GitHub Pages.
+
+
+## v8
+- Agent Christa's opening dialogue is now dynamic instead of repeating the same generic line.
+- Dialogue combines destination-specific lines with pursuit-state reactions.
+- Christa changes tone across Cold Trail, On Her Trail, Closing In, Hot Pursuit, and Visual Contact.
+- Recently used Christa lines are suppressed to reduce immediate repetition.
+- Arrival dialogue also reacts to the current pursuit state.
+- Canonical Christa artwork is versioned as `agent-christa-v8.png` to avoid stale browser image caching.
