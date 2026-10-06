@@ -33,3 +33,13 @@ Deploy all root files and the assets folder to GitHub Pages.
 - Pizza investigation now exposes selectable crust/topping/preparation observations before the multiple-choice identification.
 - Passport stamp progress is visible during the mission.
 - Stronger dossier/tactile styling throughout gameplay.
+
+
+## v10
+- Global guard suppresses literal undefined/null in UI.
+- Investigation sources are single-use per destination and visibly stamped USED.
+- No investigation returns “no intel available”; exhausted pools return a useful synthesis.
+- Adult Mode adds Taproom Intelligence with destination-specific and regional beer clues. Kids Mode has no alcohol content.
+- Agent and harder pizza deductions hide giveaway pizza names and use crust/topping/preparation descriptions.
+- Higher-level distractors are selected for clue similarity.
+- One-use investigation state resets at every destination.
