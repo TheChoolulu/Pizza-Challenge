@@ -1,19 +1,14 @@
-# Agent Christa: The Great Pizza Challenge — v6
+# Agent Christa: The Great Pizza Challenge — v7
 
-## v6 rules
-- Uses the illustrated traveling-pizza-agent Christa asset, not the original source photograph.
-- Neighborhoods are removed completely. Geography is city-level.
-- International write-ins require City + Country.
-- U.S. write-ins require City + State.
-- Kids Mode accepts close/phonetic location spelling as a solved deduction, then requires the player to copy the correctly spelled model before continuing.
-- Adult Mode requires correctly spelled write-in location answers (capitalization, spacing and diacritics are normalized).
-- Pizza identification is ALWAYS multiple choice.
-- Pizza choices scale by difficulty: 2 / 3 / 4 / 5 / 6.
-- Every correct pizza reveal includes a short history/culture fact tied to the pizza and destination.
-- Harder levels use subtler clues and stronger distractors rather than neighborhood trivia.
+V7 expands replayability and presentation.
 
-## GitHub Pages
-Upload the CONTENTS of this folder to the root of your existing Pizza-Challenge repository and replace the old files. Keep the assets folder as a folder.
+- 40+ city-level pizza/flatbread cases across multiple continents
+- Junior Agent location solving is fully multiple choice with complete City + State/Country answers
+- Pizza identification remains multiple choice at every level, scaling from 2 to 6 choices
+- Recent destinations are remembered locally and avoided on the next mission when possible
+- New versioned Agent Christa artwork prevents old-image browser caching
+- Redesigned vintage travel-dossier opening screen
+- More realistic two-page end-of-mission passport with ID page, visa stamps, score, rank, date and Print/Save PDF
+- Higher levels retain open-ended location deductions and Kids spelling support
 
-- v6 fixes location multiple choice: every option now contains the complete answer. International choices display City, Country; U.S. choices display City, State. No second text field appears after selecting a multiple-choice location.
-- v6 replaces the character asset with the approved text-free Colosseum/Trevi Fountain traveling Agent Christa illustration.
+Deploy all root files and the assets folder to GitHub Pages.
