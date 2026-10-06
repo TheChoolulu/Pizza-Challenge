@@ -1,33 +1,30 @@
-# The Great Pizza Challenge
+# Agent Christa: The Great Pizza Challenge — Vintage Build
 
-A replayable travel-deduction game starring Agent Christa and her white cowboy hat.
+A standalone, mobile-first travel-deduction game.
 
-## Run locally
-Open `index.html` in a modern browser. No build tools or server are required.
+## Publish on GitHub Pages
+Upload the **contents** of this folder to the root of your existing repository. `index.html` must remain at repository root. Commit the changes. GitHub Pages will rebuild automatically from `main` / `(root)`.
 
-## Publish with GitHub Pages
-1. Create a new GitHub repository.
-2. Upload all files and the `assets` folder from this project.
-3. In the repository, open **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select the `main` branch and `/ (root)`, then save.
-6. GitHub will provide the public game URL after deployment.
+## Important files
+- `index.html` — app shell
+- `styles.css` — vintage travel-game visual system
+- `data.js` — destination, neighborhood and pizza cases
+- `app.js` — game engine
+- `assets/agent-christa.jpg` — Christa image used throughout the app
+- `assets/design-reference.png` — visual reference used for the map texture
 
-## Current features
-- Kids and Adult modes
-- Junior Agent, Super Agent, and Pizza Intelligence Director difficulty levels
-- Open-ended city/country deductions
-- Neighborhood-level deduction on Director difficulty
-- Separate location and pizza evidence streams
-- Strategic assistance penalties and travel funds
+## New in this build
+- Mobile-first vintage travel-game interface
+- Christa image integrated into title, sighting and arrival scenes
+- Quick Trip, World Tour and Epic Pizza Chase
+- Five difficulty levels
+- Open-ended city/country answers on harder levels
+- Neighborhood-level deductions for Special Agent and Director
 - Pursuit-state mechanic instead of a countdown clock
-- Player avatars or local photo upload
-- Agent Christa artwork and near-miss scenes
-- Randomized three-stop Quick Trip
-- Printable vintage Pizza Passport with player photo/avatar and destination stamps
+- Assistance has a pursuit penalty
+- Parallel location and pizza evidence
+- Player avatar or uploaded photo
+- Printable / Save-as-PDF vintage passport
+- 12 destination cases
 
-## Content expansion
-Destination content lives in `data.js`. Add new destination objects there without changing the game engine in `app.js`.
-
-## Important accuracy note
-Before a public release, expand and fact-check the destination database, especially neighborhood-specific pizza claims and adult beer clues. The current build is an initial content set for play-testing.
+No server or build tools are required.
