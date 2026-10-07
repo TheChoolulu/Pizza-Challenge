@@ -43,3 +43,17 @@ Deploy all root files and the assets folder to GitHub Pages.
 - Agent and harder pizza deductions hide giveaway pizza names and use crust/topping/preparation descriptions.
 - Higher-level distractors are selected for clue similarity.
 - One-use investigation state resets at every destination.
+
+
+## v11
+- Expanded to 80 unique city-level cases.
+- Each case now carries 12 structured evidence records, yielding 960+ raw evidence/interpretation combinations before beer intelligence and puzzles.
+- Raw evidence and bureau interpretation are separate; clue screens no longer repeat the same sentence in both places.
+- Desktop/tablet/phone layout is detected automatically from viewport, pointer and orientation, with dedicated responsive behavior.
+- Phone clue screens are compact and touch-first; desktop retains the full dossier desk.
+- Investigation sources remain single-use per stop.
+- Adult Taproom Intelligence only appears where destination-specific beer evidence exists; Kids Mode has no alcohol content.
+- Data is normalized so every case has a flag, country, safe state field, four location clues and four pizza clues.
+- All rendering passes through a safe HTML guard and geography uses a single region helper to prevent literal undefined/null values.
+- Higher-level pizza identification continues to hide giveaway pizza names and use characteristic-based descriptions.
+- No neighborhood-level deductions.
