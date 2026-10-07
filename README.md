@@ -45,7 +45,7 @@ Deploy all root files and the assets folder to GitHub Pages.
 - One-use investigation state resets at every destination.
 
 
-## v11
+## v12
 - Expanded to 80 unique city-level cases.
 - Each case now carries 12 structured evidence records, yielding 960+ raw evidence/interpretation combinations before beer intelligence and puzzles.
 - Raw evidence and bureau interpretation are separate; clue screens no longer repeat the same sentence in both places.
@@ -57,3 +57,12 @@ Deploy all root files and the assets folder to GitHub Pages.
 - All rendering passes through a safe HTML guard and geography uses a single region helper to prevent literal undefined/null values.
 - Higher-level pizza identification continues to hide giveaway pizza names and use characteristic-based descriptions.
 - No neighborhood-level deductions.
+
+
+## v12 changes
+- Adds the Great Pizza Chase backstory and a pursuit-dependent ending.
+- Difficulty-aware answer-leakage guard: direct capital clues are rewritten above Junior level.
+- Pizza evidence strips city, state, country, pizza-name, and common geographic adjective giveaways before display.
+- U.S. state postal abbreviations (CT, NY, etc.) are accepted as equivalent to full state names.
+- Restores and isolates realistic passport visa stamps with varied circular/oval/double-ring treatments.
+- Fixes the v11 flag helper recursion bug and versions the Christa asset as v12.
