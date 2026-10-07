@@ -101,42 +101,63 @@ function map(){render(`<section class="scene">${hud()}<div class="paper"><div cl
 function sighting(){let c=S.route[S.idx];render(`<section class="scene">${hud()}<div class="paper"><div class="panel-head">Christa's Sighting</div><div class="panel-body sighting"><div class="polaroid"><img src="${img()}" alt="Illustrated Agent Christa sighting"><div class="center kicker mt">Surveillance Illustration • Location Withheld</div></div><div class="note"><b>${esc(S.name)},</b><p>${esc(christaOpening(c))}</p><p class="muted">Pursuit status: <b>${leadLabel()}</b></p><p>— Christa 🤠🍕</p><button class="btn" id="invest">Begin Investigation</button></div></div></div></section>`);$('#invest').onclick=investigate}
 
 const BEER_INTEL={
-"New Haven":["RAW • Brewery coaster: CONNECTICUT • HAZY IPA • NEW ENGLAND SERIES","This points toward New England, with Connecticut especially plausible."],
-"Boston":["RAW • Tap list: NEW ENGLAND IPA • MASSACHUSETTS BREWED","The beer clue points toward Massachusetts and New England."],
-"Milwaukee":["RAW • Historic brewery tour stub • WISCONSIN • LAGER","Milwaukee has a major brewing legacy; Wisconsin is strongly supported."],
-"St. Louis":["RAW • Lager brewery archive • MISSOURI • MISSISSIPPI RIVER","The brewing-history clue strongly supports St. Louis."],
-"Cologne":["RAW • Narrow 0.2 L glass • KÖLSCH • coaster tally marks","Kölsch service is a powerful clue for Cologne."],
-"Munich":["RAW • Helles • Weissbier • BAVARIA • beer-hall token","Bavarian beer-hall culture strongly supports Munich."],
-"Prague":["RAW • SVĚTLÝ LEŽÁK • Czech koruna prices • dense foam","Pale Czech lager and koruna pricing support Prague."],
-"Dublin":["RAW • Dry stout • pub receipt • € • BAILE ÁTHA CLIATH","The stout and Irish-language clue support Dublin."],
-"London":["RAW • Cask bitter • handpull • pint • £","Cask ale and sterling point toward a British pub setting."],
-"Brussels":["RAW • Gueuze • lambic • Belgian beer café list","Lambic and gueuze strongly support Brussels and Belgium."],
-"Vienna":["RAW • Austrian lager • German menu • €","German-language Austrian beer evidence supports Vienna."],
-"Berlin":["RAW • Berliner Weisse • German tap list • €","The named sour-wheat tradition strongly supports Berlin."],
-"Copenhagen":["RAW • Danish craft pilsner • DKK prices","Danish kroner and local beer terminology support Copenhagen."],
-"Stockholm":["RAW • Swedish pale ale • SEK prices","Swedish currency and language support Stockholm."],
-"Oslo":["RAW • Norwegian craft lager • NOK prices","Norwegian kroner and language support Oslo."],
-"Montreal":["RAW • Québec craft lager • bilingual French/English menu","The bilingual Québec clue strongly supports Montreal."],
-"Windsor":["RAW • ONTARIO craft beer • DETROIT RIVER patio special","Ontario plus Detroit River strongly supports Windsor."],
-"Detroit":["RAW • MICHIGAN craft lager • MOTOR CITY taproom receipt","Michigan and Motor City make this strong Detroit evidence."],
-"Chicago":["RAW • CHICAGO-brewed lager • LAKE MICHIGAN taproom","The city name is withheld, but Lake Michigan and Illinois brewing context narrow the case."],
-"Philadelphia":["RAW • Pennsylvania lager • DELAWARE RIVER brewery receipt","Pennsylvania and the Delaware River support Philadelphia."],
-"Buffalo":["RAW • WESTERN NEW YORK IPA • LAKE ERIE coaster","Western New York and Lake Erie support Buffalo."],
-"Buenos Aires":["RAW • CERVEZA ARTESANAL • Argentine peso prices","Spanish plus Argentine currency supports Buenos Aires."],
-"Montevideo":["RAW • CERVEZA ARTESANAL • Uruguayan peso prices","The currency distinguishes Uruguay from nearby Argentina."],
-"São Paulo":["RAW • CERVEJA ARTESANAL • Brazilian real prices","Portuguese beer terminology and reais support Brazil."],
-"Rome":["RAW • Italian craft lager • € • Italian-language tap list","The beer evidence supports Italy; use another clue for the city."],
-"Naples":["RAW • Italian lager • CAMPANIA brewery address","Campania is the key geographic clue toward Naples."],
-"Palermo":["RAW • SICILIA craft beer • Italian label","The island reference strongly supports Sicily and Palermo."],
-"Bari":["RAW • PUGLIA brewery label • Italian pilsner","Puglia is the key regional clue toward Bari."],
-"Istanbul":["RAW • Turkish lager • ₺ prices • Turkish-language menu","The currency and language strongly support Turkey."],
-"Sydney":["RAW • NSW craft pale ale • harbor pub receipt","New South Wales and harbor context support Sydney."],
-"Melbourne":["RAW • VICTORIA craft pale ale • tram-side pub receipt","Victoria plus tram context support Melbourne."],
-"Tokyo":["RAW • Japanese lager • ¥ • izakaya draft card","Yen and Japanese text support Japan; combine with city evidence."],
-"Osaka":["RAW • Japanese lager • ¥ • KANSAI brewery card","Kansai is the useful regional clue toward Osaka."],
-"Singapore":["RAW • local lager • S$ • bilingual tap list","Singapore dollars make this a strong city-state clue."],
-"Cape Town":["RAW • WESTERN CAPE craft lager • rand prices","Western Cape is the key clue toward Cape Town."]};
-function beerIntel(c){let x=BEER_INTEL[c.city];return x?{raw:x[0],interpretation:x[1]}:null}
+"New Haven":["Brewery coaster • HAZY IPA • NEW ENGLAND SERIES • small-batch lager","The beer list points toward southern New England; combine it with the map and transit evidence."],
+"Boston":["Tap list • NEW ENGLAND IPA • historic ale-house receipt • harbor sketch","The beer culture and harbor context point toward coastal New England."],
+"Milwaukee":["Historic brewery-tour stub • lager cellar • lakefront warehouse district","A long lager-brewing tradition and Great Lakes setting sharply narrow the possibilities."],
+"St. Louis":["Lager brewery archive • riverfront warehouse receipt • toasted-rice lager special","Large-scale lager history and a major river corridor are important geographic clues."],
+"Cologne":["Narrow 0.2 L glass • KÖLSCH • coaster tally marks","The distinctive small-glass service tradition is unusually specific to this destination."],
+"Munich":["Helles • Weissbier • beer-hall token • one-liter mug deposit","The beer-hall service and pale lager/wheat-beer combination point toward Bavaria."],
+"Prague":["SVĚTLÝ LEŽÁK • dense foam • tank-beer cellar • koruna-priced receipt","Pale lager culture, tank service and the currency clue strongly narrow the destination."],
+"Dublin":["Dry stout • pub receipt • bilingual street heading • €","The stout tradition plus the bilingual wording provide both cultural and geographic evidence."],
+"London":["Cask bitter • handpull • pint • £","Cask-conditioned ale, imperial pints and sterling point toward a British pub setting."],
+"Brussels":["Gueuze • lambic • bottle-conditioned beer café list","Spontaneously fermented lambic-family beers are an unusually strong regional clue."],
+"Vienna":["Amber lager • café-tap receipt • German-language headings • €","The lager tradition and language narrow the case to a German-speaking Central European setting."],
+"Berlin":["Tart wheat beer • syrup option • German tap list • €","A tart wheat-beer tradition provides a city-specific historical clue without printing the city name."],
+"Copenhagen":["Craft pilsner • cycling-themed taproom receipt • DKK","The currency and cycling context point toward a Scandinavian capital without naming it."],
+"Stockholm":["Pale ale • archipelago brewery graphic • SEK","The currency and archipelago imagery provide useful Swedish geographic context."],
+"Oslo":["Craft lager • fjord-side pub receipt • NOK","The currency plus fjord setting narrow the destination within Scandinavia."],
+"Montreal":["Québec-style craft lager • bilingual French/English chalkboard • old-port sketch","The bilingual evidence and provincial brewing context strongly narrow the city."],
+"Windsor":["Ontario craft beer • riverfront patio • skyline visible across the water","The cross-border riverfront clue is much more useful than the beer style alone."],
+"Detroit":["Michigan craft lager • automobile-themed taproom receipt • riverfront label","The automobile and riverfront clues combine into a strong city profile."],
+"Chicago":["Lakefront brewery receipt • deep-roast porter • elevated-train sketch","The lake and elevated transit imagery are stronger evidence than the beer itself."],
+"Philadelphia":["Pennsylvania lager • old-city tavern receipt • riverfront brewery stamp","Brewing history, colonial-era context and the river setting narrow the destination."],
+"Buffalo":["Western Great Lakes IPA • lake-effect special • old grain-silo coaster","The Great Lakes, grain-silo and weather references point toward the eastern end of a major lake."],
+"Buenos Aires":["CERVEZA ARTESANAL • peso-priced receipt • porteño bar notation","Spanish, local bar terminology and the currency clue point toward the Río de la Plata region."],
+"Montevideo":["CERVEZA ARTESANAL • peso-priced receipt • rambla-side bar sketch","The waterfront-promenade context helps distinguish this destination from nearby Spanish-speaking cities."],
+"São Paulo":["CERVEJA ARTESANAL • real-priced receipt • Portuguese headings","Portuguese wording and the currency clue identify the country; other evidence must identify the city."],
+"Rome":["Craft lager • € • ancient-stone cellar sketch • Italian menu headings","Language and currency identify the broader region; the ancient urban setting provides another layer."],
+"Naples":["Lager receipt • volcanic-slope brewery graphic • southern coastal delivery note","The volcano-and-coast combination is the useful clue here, not the beer style."],
+"Palermo":["Island craft ale • citrus label • Mediterranean port receipt","Island, citrus and port clues combine into a distinctive southern Mediterranean profile."],
+"Bari":["Adriatic brewery receipt • pale lager • heel-shaped regional map icon","The Adriatic setting and regional map icon provide the geographic value."],
+"Istanbul":["Lager • ₺ prices • ferry-terminal pub receipt • Turkish headings","Currency, language and ferry traffic across a major strait make this a strong clue."],
+"Sydney":["NSW pale ale • harbor-pub receipt • ferry icon","State abbreviation plus harbor transit provides the useful geographic evidence."],
+"Melbourne":["Victoria pale ale • tram-side pub receipt • laneway address","State, tram and laneway clues combine into a distinctive city profile."],
+"Tokyo":["Lager • ¥ • izakaya draft card • dense rail-station receipt","Currency and venue type identify the country; rail context helps build the city case."],
+"Osaka":["Lager • ¥ • Kansai brewery card • food-stall district receipt","The regional label is the key clue that separates this city from other major cities in the country."],
+"Singapore":["Local lager • S$ • bilingual tap list • hawker-centre receipt","The currency makes this unusually strong city-state evidence."],
+"Cape Town":["Western Cape craft lager • rand-priced receipt • mountain silhouette","Province, currency and the mountain silhouette combine into a strong destination profile."]};
+function beerIntel(c){
+ let x=BEER_INTEL[c.city];
+ if(x)return {raw:x[0],interpretation:x[1]};
+ let l=c.loc||[], regional=l[1]||l[0]||'A regional clue appears on the receipt.', scene=l[2]||l[3]||'The venue setting provides a second geographic clue.';
+ return {raw:`Taproom receipt • ${regional} • ${scene}`,interpretation:'The taproom evidence contributes currency, language, landscape or regional context. Cross-check it with another source before naming the city.'};
+}
+function actionEvidence(c,type){
+ const l=c.loc||[], p=c.pizzaClues||[];
+ const loc=(i,fallback)=>l[i]||l.find(Boolean)||fallback;
+ const pizza=(i,fallback)=>p[i]||p.find(Boolean)||fallback;
+ const bank={
+  local:{id:'local',kind:'loc',type:'local',label:'Witness Interview',raw:`A shopkeeper remembers Christa asking directions. The useful detail in the statement: “${loc(2,'The surrounding geography is distinctive.')}”`,interpretation:'Witness statements are strongest for visible geography and everyday local context. Compare this detail with the map file.'},
+  translate:{id:'translate',kind:'loc',type:'translate',label:'Recovered Text',raw:`Translation desk report • a sign, receipt or message uses local wording. Linguistic finding: ${loc(0,'The language pattern narrows the region.')}`,interpretation:'Language can narrow the country or region, but it rarely identifies the city by itself. Pair it with transit or landmark evidence.'},
+  map:{id:'map',kind:'loc',type:'map',label:'Marked Map Fragment',raw:`Map examiner’s notes • ${loc(2,'Water, terrain and transport corridors are marked on the fragment.')}`,interpretation:'This is physical-geography evidence. Use the water, terrain or urban-form clue to eliminate cities that do not fit.'},
+  photo:{id:'photo',kind:'loc',type:'photo',label:'Surveillance Photograph',raw:`Visible in the frame • ${loc(3,loc(2,'Architecture, street design and landscape are visible.'))}`,interpretation:'Treat only what could plausibly be seen in the image as evidence. Cross-check it against the map rather than relying on one visual detail.'},
+  landmark:{id:'landmark',kind:'loc',type:'landmark',label:'Landmark Research File',raw:`Archive cross-reference • ${loc(3,loc(2,'A civic, historic or geographic landmark matches the surveillance file.'))}`,interpretation:'The archive result should distinguish the city from other places in the same country or state. Combine it with language or transit evidence.'},
+  transit:{id:'transit',kind:'loc',type:'transit',label:'Transit Record',raw:`Recovered fare record • ${loc(1,'The fare format, currency or transit convention is regionally distinctive.')} • Route context: ${loc(2,'The network follows the city’s geography.')}`,interpretation:'Fare, currency and network geography can be highly diagnostic. Use this source to test your current city theory.'},
+  menu:{id:'menu',kind:'pizza',type:'menu',label:'Pizza Inspection Card',raw:`Kitchen observation • ${pizza(0,'The crust and topping structure are distinctive.')} • ${pizza(2,'Preparation details provide another clue.')}`,interpretation:'Focus on crust structure, cooking method and ingredient balance. The geographic name of the pizza is intentionally withheld.'},
+  receipt:{id:'receipt',kind:'pizza',type:'receipt',label:'Restaurant Menu & Receipt',raw:`Menu notes • ${pizza(1,'The serving style is distinctive.')} • ${pizza(3,'The preparation tradition provides a second clue.')}`,interpretation:'Use preparation and serving details rather than geographic labels. Compare this evidence with the pizza inspection card.'}
+ };
+ return bank[type]||null;
+}
 function descriptivePizzaChoices(c){
  let n=choiceCount[S.diff]||4, correct=scrubPizzaEvidence(c,(c.pizzaClues||[]).slice(0,3).join(' • ')||c.pizza);
  let words=new Set(norm(correct).split(/\s+/).filter(w=>w.length>4));
@@ -149,8 +170,8 @@ function clueType(kind,i){const sets={loc:['📝 Handwritten Note','🎫 Transit
 function evidenceRow(kind,i,text,selected){return `<button class="evidence-slip ${selected?'selected':''}" data-kind="${kind}" data-i="${i}"><span class="evidence-check">${selected?'✓':'○'}</span><span><b>${clueType(kind,i)}</b><small>${esc(text)}</small></span></button>`}
 function actionUsed(label){return !!(S.usedActions&&S.usedActions[label])}
 function markAction(label){S.usedActions=S.usedActions||{};S.usedActions[label]=true}
-function actionCatalog(c){let a=[['🗣️','Ask a Local','local',0,3],['📝','Translate Clue','translate',60,5],['🗺️','Check Map','map',90,6],['📷','Inspect Photo','photo',0,3],['🏛️','Research Landmark','landmark',120,7],['🎫','Check Transit','transit',45,4],['🍕','Inspect Pizza','menu',0,4],['📋','Check Menu','receipt',50,4]];if(S.mode==='adult'&&beerIntel(c))a.push(['🍺','Taproom Intelligence','beer',85,5]);a.push(['🧩','Decode Intercept','puzzle',0,0]);return a}
-function evidenceFor(c,type){S.evidenceHistory=S.evidenceHistory||[];let pool=(c.evidence||[]).filter(x=>x.type===type&&!S.evidenceHistory.includes(c.city+'|'+x.id));if(!pool.length)pool=(c.evidence||[]).filter(x=>x.type===type);if(!pool.length)pool=(c.evidence||[]).filter(x=>type==='menu'||type==='receipt'?x.kind==='pizza':x.kind==='loc');let x=pool[Math.floor(Math.random()*pool.length)];if(x)S.evidenceHistory.push(c.city+'|'+x.id);return x}
+function actionCatalog(c){let a=[['🗣️','Ask a Local','local',0,3],['📝','Translate Clue','translate',60,5],['🗺️','Check Map','map',90,6],['📷','Inspect Photo','photo',0,3],['🏛️','Research Landmark','landmark',120,7],['🎫','Check Transit','transit',45,4],['🍕','Inspect Pizza','menu',0,4],['📋','Check Menu','receipt',50,4]];if(S.mode==='adult')a.push(['🍺','Taproom Intelligence','beer',85,5]);a.push(['🧩','Decode Intercept','puzzle',0,0]);return a}
+function evidenceFor(c,type){return actionEvidence(c,type)}
 function investigate(){let c=S.route[S.idx],acts=actionCatalog(c);render(`<section class="scene">${hud()}<div class="case-desk"><div class="case-head"><span>CASE FILE ${String(S.idx+1).padStart(2,'0')}</span><b>FIELD INVESTIGATION</b><span>${detectDevice().toUpperCase()}</span></div><div class="desk-grid"><aside class="case-sidebar"><div class="mini-passport"><b>AGENT</b><span>${esc(S.name)}</span><small>${leadLabel()}</small></div><div class="stamp red">TOP SECRET<br>PIZZA DIVISION</div><p>Each source can be used once at this stop. Evidence stays on your board.</p><button class="btn secondary" id="evidence">Evidence Board</button><button class="btn" id="guess">Make Deduction</button></aside><main><div class="screen-title">Choose an investigation</div><div class="investigate-grid tactile">${acts.map(x=>{let u=actionUsed(x[1]);return `<button class="investigate evidence-object ${u?'used-source':''}" data-label="${esc(x[1])}" data-type="${x[2]}" data-cost="${x[3]}" data-pen="${x[4]}" ${u?'disabled':''}><div class="icon">${x[0]}</div><b>${x[1]}</b><small>${x[2]==='beer'?'Beer culture can provide geographic evidence.':'Open a new physical evidence source.'}</small><div class="cost">${u?'✓ USED':(x[3]?'$'+x[3]:'FREE')+' • trail −'+x[4]}</div>${u?'<div class="used-stamp">USED</div>':''}</button>`}).join('')}</div></main></div></div></section>`);document.querySelectorAll('.investigate:not([disabled])').forEach(b=>b.onclick=()=>invest(b.dataset.type,+b.dataset.cost,+b.dataset.pen,b.dataset.label));$('#evidence').onclick=evidence;$('#guess').onclick=deduce}
 function invest(type,cost,pen,label){let c=S.route[S.idx];if(actionUsed(label))return toast('That source is already used.');if(S.funds<cost)return toast('Not enough travel funds.');S.funds-=cost;S.trail=Math.max(5,S.trail-pen);markAction(label);if(type==='puzzle')return puzzle();let item;if(type==='beer'){let b=beerIntel(c);item={id:'beer',kind:'loc',type:'beer',label:'Taproom Intelligence',raw:b.raw,interpretation:b.interpretation}}else item=evidenceFor(c,type);if(!item)return toast('This source is unavailable for this case.');item=displayEvidence(c,item);S.collectedEvidence=S.collectedEvidence||[];S.collectedEvidence.push(item);clueReveal(item,label)}
 function clueReveal(item,label){let icon=item.type==='beer'?'🍺':item.kind==='pizza'?'🍕':item.type==='map'?'🗺️':item.type==='photo'?'📷':item.type==='transit'?'🎫':'📝';render(`<section class="scene">${hud()}<div class="case-desk"><div class="case-head"><span>NEW EVIDENCE</span><b>${esc(label||item.label)}</b><span>FILED</span></div><div class="clue-stage"><div class="found-object ${item.kind==='pizza'?'menu-object':'note-object'}"><div class="object-label">${esc(item.label)}</div><div class="raw-tag">RAW EVIDENCE</div><div class="handwritten">${esc(item.raw)}</div><div class="object-sketch">${icon}</div></div><div class="clue-analysis"><div class="stamp">${item.type==='beer'?'BEER INTELLIGENCE':item.kind==='pizza'?'FOOD EVIDENCE':'LOCATION EVIDENCE'}</div><h2>What does this tell you?</h2><p class="analysis-copy">${esc(item.interpretation)}</p><p class="muted">Raw evidence and interpretation are stored separately on your evidence board.</p><button class="btn" id="continue">Continue Investigation</button></div></div></div></section>`);$('#continue').onclick=investigate}

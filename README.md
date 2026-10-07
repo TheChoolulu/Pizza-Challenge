@@ -1,68 +1,13 @@
-# Agent Christa: The Great Pizza Challenge — v7
+# Agent Christa: The Great Pizza Challenge — v12.1
 
-V7 expands replayability and presentation.
+Content repair for v12.
 
-- 40+ city-level pizza/flatbread cases across multiple continents
-- Junior Agent location solving is fully multiple choice with complete City + State/Country answers
-- Pizza identification remains multiple choice at every level, scaling from 2 to 6 choices
-- Recent destinations are remembered locally and avoided on the next mission when possible
-- New versioned Agent Christa artwork prevents old-image browser caching
-- Redesigned vintage travel-dossier opening screen
-- More realistic two-page end-of-mission passport with ID page, visa stamps, score, rank, date and Print/Save PDF
-- Higher levels retain open-ended location deductions and Kids spelling support
+- Every investigation button now has its own evidence role. Generic cross-type fallback clues were removed.
+- Ask a Local, Translate, Map, Photo, Landmark, Transit, Pizza Inspection and Menu/Receipt produce materially different evidence.
+- Adult Mode always includes Taproom Intelligence. 35 destinations have hand-authored taproom evidence; the remaining destinations generate taproom evidence from that case’s regional/currency/landscape facts rather than returning “no intel.”
+- Taproom evidence remains absent from Kids Mode.
+- Raw evidence and bureau interpretation remain separate.
+- v12 answer-leakage filters, state-abbreviation support, chase story, responsive layouts and realistic passport system are preserved.
+- No neighborhood clues.
 
-Deploy all root files and the assets folder to GitHub Pages.
-
-
-## v8
-- Agent Christa's opening dialogue is now dynamic instead of repeating the same generic line.
-- Dialogue combines destination-specific lines with pursuit-state reactions.
-- Christa changes tone across Cold Trail, On Her Trail, Closing In, Hot Pursuit, and Visual Contact.
-- Recently used Christa lines are suppressed to reduce immediate repetition.
-- Arrival dialogue also reacts to the current pursuit state.
-- Canonical Christa artwork is versioned as `agent-christa-v8.png` to avoid stale browser image caching.
-
-
-## v9
-- Rebuilt gameplay around the supplied tactile investigation-board design reference.
-- Physical clue objects, translation interaction, evidence board selection, evidence-theory pursuit bonus.
-- New investigations: Ask a Local, Translate Clue, Check Map, Inspect Photo, Research Landmark, Check Menu, and Adult Taproom intel.
-- Dedicated deduction desk with Narrow the Region, Reveal Map Area, Show Possible Locations, and Another Pizza Clue. No neighborhoods.
-- Junior Agent location deduction remains fully multiple choice using complete City + State/Country answers.
-- Correct-location arrival is now an event with arrival stamp and live passport progress.
-- Pizza investigation now exposes selectable crust/topping/preparation observations before the multiple-choice identification.
-- Passport stamp progress is visible during the mission.
-- Stronger dossier/tactile styling throughout gameplay.
-
-
-## v10
-- Global guard suppresses literal undefined/null in UI.
-- Investigation sources are single-use per destination and visibly stamped USED.
-- No investigation returns “no intel available”; exhausted pools return a useful synthesis.
-- Adult Mode adds Taproom Intelligence with destination-specific and regional beer clues. Kids Mode has no alcohol content.
-- Agent and harder pizza deductions hide giveaway pizza names and use crust/topping/preparation descriptions.
-- Higher-level distractors are selected for clue similarity.
-- One-use investigation state resets at every destination.
-
-
-## v12
-- Expanded to 80 unique city-level cases.
-- Each case now carries 12 structured evidence records, yielding 960+ raw evidence/interpretation combinations before beer intelligence and puzzles.
-- Raw evidence and bureau interpretation are separate; clue screens no longer repeat the same sentence in both places.
-- Desktop/tablet/phone layout is detected automatically from viewport, pointer and orientation, with dedicated responsive behavior.
-- Phone clue screens are compact and touch-first; desktop retains the full dossier desk.
-- Investigation sources remain single-use per stop.
-- Adult Taproom Intelligence only appears where destination-specific beer evidence exists; Kids Mode has no alcohol content.
-- Data is normalized so every case has a flag, country, safe state field, four location clues and four pizza clues.
-- All rendering passes through a safe HTML guard and geography uses a single region helper to prevent literal undefined/null values.
-- Higher-level pizza identification continues to hide giveaway pizza names and use characteristic-based descriptions.
-- No neighborhood-level deductions.
-
-
-## v12 changes
-- Adds the Great Pizza Chase backstory and a pursuit-dependent ending.
-- Difficulty-aware answer-leakage guard: direct capital clues are rewritten above Junior level.
-- Pizza evidence strips city, state, country, pizza-name, and common geographic adjective giveaways before display.
-- U.S. state postal abbreviations (CT, NY, etc.) are accepted as equivalent to full state names.
-- Restores and isolates realistic passport visa stamps with varied circular/oval/double-ring treatments.
-- Fixes the v11 flag helper recursion bug and versions the Christa asset as v12.
+For GitHub Pages, replacing app.js is sufficient if you already installed v12-fixed. The full package is included for convenience.
